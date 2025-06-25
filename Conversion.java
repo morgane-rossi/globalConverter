@@ -2,14 +2,18 @@ import java.util.List;
 import java.util.ArrayList;
 
 abstract class Conversion {
-    protected String user;//the string user typed
     
-    Conversion() {}
+    //A T T R I B U T E S
+    protected String user; //the string typed by user
+    
+    //C O N S T R U C T O R S
+    Conversion() {} //Empty constructor to aid development
 
     Conversion(String user) {
         this.user = user;
     }
 
+    //F U N C T I O N S
     protected String convert_ascii() {
         //Return the conversion of the String to Ascii.
         String ascii_s = "";
@@ -24,7 +28,7 @@ abstract class Conversion {
     }
 
     protected List<Integer> get_ascii_list() {
-        
+        //Returns a list of each caracters converted in ASCII.
         List<Integer> ascii_s = new ArrayList<>();
         
         for (int i=0; i < this.user.length();i++) {
@@ -36,6 +40,7 @@ abstract class Conversion {
         return ascii_s;
     }
 
-    abstract protected void convert();
 
+    //A B S T R A C T  M E T H O D S
+    abstract protected void convert();
 }
