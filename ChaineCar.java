@@ -1,21 +1,12 @@
 package globalConvertor;
 
 public class ChaineCar {
-	int taille;
-	char[] caracteres;
+	char[] characters;
 	String base;
-	int cle;
+	int key;
 	
 	public ChaineCar() {
+		this.key = 0 ;
 	}
-
-	public ChaineCar(int taille, char[] caracteres, String base, int cle) {
-		super();
-		this.taille = taille;
-		this.caracteres = new char[taille];
-		this.base = base;
-		this.cle = cle;
-	}
-	
 
 }

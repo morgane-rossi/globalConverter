@@ -11,17 +11,7 @@ public abstract class Base {
 	
 	public abstract void convertir(ChaineCar tabchar);
 
-	public static int[] toDecimalArray(ChaineCar tabchar) {
- 
-		int tailleTxt = tabchar.caracteres.length;
-		int[] tabDecimal = new int[tailleTxt];
 
-		for(int j = 0 ; j < tailleTxt ; j++) {
-			int decimal = (int) tabchar.caracteres[j];
-			tabDecimal[j] = decimal;
-		}
-		return tabDecimal ;
-	}
 
 	String convertToBase(int base, int[] decimals) {
 		StringBuilder answer = new StringBuilder();
