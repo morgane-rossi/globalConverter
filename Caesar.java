@@ -2,7 +2,12 @@ package globalConvertor;
 
 public class Caesar {
 
-	public static int[] toDecimalArray(ChaineCar tabchar) {
+	/*
+	 * converts a Character array to a integer array
+	 * every integer represents ascii integer value
+	 * of the character
+	 * */
+	public static void toDecimalArray(ChaineCar tabchar) {
 		 
 		int lengthText = tabchar.characters.length;
 		int[] decimalsArray = new int[lengthText];
@@ -12,8 +17,6 @@ public class Caesar {
 			decimal += tabchar.key;
 			decimalsArray[j] = decimal;
 		}
-		return decimalsArray ;
-	}	
-	
-	
+		tabchar.decimalsArray = decimalsArray;
+	}
 }
