@@ -1,10 +1,12 @@
 package globalConvertor;
 
-public class Fusion {
+public class Main {
 
 	public static void main(String[] args) {
         try {
-        	ProcessArgs.processArgs(args);
+        	ChaineCar chaineCar = new ChaineCar();
+        	ProcessArgs.processArgs(args, chaineCar);
+        	
         } catch (InvalidArgumentsException e) {
             System.out.println("Error: " + e.getMessage());
         }
