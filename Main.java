@@ -7,8 +7,11 @@ public class Main {
         	ChaineCar chaineCar = new ChaineCar();
         	ProcessArgs.processArgs(args, chaineCar);
 
-        	System.out.println("taille = " + chaineCar.taille + " - base : " + chaineCar.base +
-        			" - cle : " + chaineCar.cle);
+        	int[] tabIntegers = Base.toDecimalArray(chaineCar);
+        	for (int i = 0 ; i < tabIntegers.length ; i++) {
+        		System.out.print(tabIntegers[i] + " ");
+        	}
+        	System.out.println();
        	
         } catch (InvalidArgumentsException e) {
             System.out.println("Error: " + e.getMessage());
