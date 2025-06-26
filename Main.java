@@ -6,7 +6,10 @@ public class Main {
         try {
         	ChaineCar chaineCar = new ChaineCar();
         	ProcessArgs.processArgs(args, chaineCar);
-        	
+
+        	System.out.println("taille = " + chaineCar.taille + " - base : " + chaineCar.base +
+        			" - cle : " + chaineCar.cle);
+       	
         } catch (InvalidArgumentsException e) {
             System.out.println("Error: " + e.getMessage());
         }
