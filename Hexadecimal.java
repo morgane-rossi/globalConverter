@@ -8,16 +8,16 @@ public class Hexadecimal extends Base {
 	 * displays hexadecimal values from a text input
 	 * characters are separated by a space character
 	 * */
-	public void convertir(ChaineCar tabchar) {
+	public void converting(CharStr arrayChar) {
 
 		StringBuilder answer = new StringBuilder();
-		int lenText = tabchar.characters.length;
+		int textLength = arrayChar.characters.length;
 
-		for(int k = 0 ; k < lenText ; k++) {
-			int nbHexa = tabchar.decimalsArray[k];
-			boolean encoreUnChiffre = true;
+		for(int k = 0 ; k < textLength ; k++) {
+			int nbHexa = arrayChar.decimalsArray[k];
+			boolean stillNumbers = true;
 			Vector<String> v = new Vector<>();
-			while(encoreUnChiffre) {
+			while(stillNumbers) {
 				
 				int nombre = nbHexa % 16;
 				char c ;
@@ -41,12 +41,12 @@ public class Hexadecimal extends Base {
 						c = 'F';
 						break;
 					default :
-						c =Character.forDigit(nombre, 10);
+						c = Character.forDigit(nombre, 10);
 						break;
 				}
 				v.add(c + "");
 				nbHexa /= 16;
-				encoreUnChiffre = (nbHexa > 0); 
+				stillNumbers = (nbHexa > 0); 
 			}
 			// ajouter à answer mon vector de string
 			int s = v.size();

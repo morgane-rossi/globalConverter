@@ -7,16 +7,16 @@ public class Caesar {
 	 * every integer represents ascii integer value
 	 * of the character
 	 * */
-	public static void toDecimalArray(ChaineCar tabchar) {
+	public static void toDecimalArray(CharStr arrayChar) {
 		 
-		int lengthText = tabchar.characters.length;
+		int lengthText = arrayChar.characters.length;
 		int[] decimalsArray = new int[lengthText];
 
 		for(int j = 0 ; j < lengthText ; j++) {
-			int decimal = (int) tabchar.characters[j];
-			decimal += tabchar.key;
+			int decimal = (int) arrayChar.characters[j];
+			decimal += arrayChar.key;
 			decimalsArray[j] = decimal;
 		}
-		tabchar.decimalsArray = decimalsArray;
+		arrayChar.decimalsArray = decimalsArray;
 	}
 }

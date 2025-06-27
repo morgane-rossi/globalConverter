@@ -7,7 +7,7 @@ public abstract class Base {
 	public Base() {
 	}
 	
-	public abstract void convertir(ChaineCar tabchar);
+	public abstract void converting(CharStr arrayChar);
 
 
 }

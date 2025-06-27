@@ -14,19 +14,19 @@ public class Binary extends Base {
 	 * each character is displayed by a 8 length binary number
 	 * characters are separated by a space character
 	 * */
-	public void convertir(ChaineCar tabchar) {
+	public void converting(CharStr arrayChar) {
 
 		StringBuilder answer = new StringBuilder();
-		int tailleTxT = tabchar.characters.length;
+		int textLength = arrayChar.characters.length;
 
-		for(int k = 0 ; k < tailleTxT ; k++) {
-			int nbBinary = tabchar.decimalsArray[k];
-			boolean encoreUnChiffre = true;
+		for(int k = 0 ; k < textLength ; k++) {
+			int nbBinary = arrayChar.decimalsArray[k];
+			boolean stillNumbers = true;
 			Vector<String> v = new Vector<>();
-			while(encoreUnChiffre) {
+			while(stillNumbers) {
 				v.add((nbBinary % 2) + "");
 				nbBinary /= 2;
-				encoreUnChiffre = (nbBinary > 0); 
+				stillNumbers = (nbBinary > 0); 
 			}
 
 			int s = v.size();

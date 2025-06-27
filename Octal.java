@@ -9,19 +9,19 @@ public class Octal extends Base {
 	 * displays octal values from a text input
 	 * characters are separated by a space character
 	 * */
-	public void convertir(ChaineCar tabchar) {
+	public void converting(CharStr arrayChar) {
 
 		StringBuilder answer = new StringBuilder();
-		int tailleTxT = tabchar.characters.length;
+		int textLength = arrayChar.characters.length;
 
-		for(int k = 0 ; k < tailleTxT ; k++) {
-			int nbOcta = tabchar.decimalsArray[k];
-			boolean encoreUnChiffre = true;
+		for(int k = 0 ; k < textLength ; k++) {
+			int nbOcta = arrayChar.decimalsArray[k];
+			boolean stillNumbers = true;
 			Vector<String> v = new Vector<>();
-			while(encoreUnChiffre) {
+			while(stillNumbers) {
 				v.add((nbOcta % 8) + "");
 				nbOcta /= 8;
-				encoreUnChiffre = (nbOcta > 0); 
+				stillNumbers = (nbOcta > 0); 
 			}
 			int s = v.size();
 			for (int l = s - 1 ; l >= 0 ; l--) {

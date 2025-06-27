@@ -7,7 +7,7 @@ public class ProcessArgs
 		super();
 	}
 	
-    public static void processArgs(String[] args, ChaineCar chaineCar) throws InvalidArgumentsException {
+    public static void processArgs(String[] args, CharStr chaineCar) throws InvalidArgumentsException {
 
     	/* Check that the String entry contains only letters, numbers and space character */
     	for (int i = 0 ; i < args[1].length() ; i++) {
@@ -22,7 +22,7 @@ public class ProcessArgs
             	throw new InvalidArgumentsException("Second parameter must be a string"
             + " only made of alphabetic letters, numbers and ' ' sign");
             }
-            chaineCar.caracteres = args[1].toCharArray();
+            chaineCar.characters = args[1].toCharArray();
     	}
     	
     	if (args.length == 3 || args.length > 4) {
@@ -40,7 +40,7 @@ public class ProcessArgs
             		 throw new InvalidArgumentsException("Fourth argument must be an integer number, eventually followed by '-' sign"); 
             }
 
-            chaineCar.cle = Integer.parseInt(args[3]) ;
+            chaineCar.key = Integer.parseInt(args[3]) ;
 
         } 
 
@@ -69,8 +69,6 @@ public class ProcessArgs
             }
             default -> throw new InvalidArgumentsException("Unknown format: " + args[0]);
         }        
-        
 
     }
-
 }

@@ -7,11 +7,11 @@ public class Decimal extends Base {
 	 * of user input
 	 * */
 	@Override
-	public void convertir(ChaineCar tabchar) {
+	public void converting(CharStr arrayChar) {
 		// afficher tab
-		int sizeTab = tabchar.decimalsArray.length;
+		int sizeTab = arrayChar.decimalsArray.length;
 		for (int i = 0 ; i < sizeTab ; i++) {
-			System.out.print(tabchar.decimalsArray[i] + " ");
+			System.out.print(arrayChar.decimalsArray[i] + " ");
 		}
 		
 	}

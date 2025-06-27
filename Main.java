@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
         try {
-        	ChaineCar chaineCar = new ChaineCar();
+        	CharStr chaineCar = new CharStr();
         	ProcessArgs.processArgs(args, chaineCar);
 
         	Caesar.toDecimalArray(chaineCar);
@@ -13,22 +13,22 @@ public class Main {
 			case "h": {
 				
 				Hexadecimal h = new Hexadecimal();
-				h.convertir(chaineCar);
+				h.converting(chaineCar);
 				break;
 			}
 			case "o": {
 				Octal o = new Octal();
-				o.convertir(chaineCar);
+				o.converting(chaineCar);
 				break;				
 			}
 			case "d": {
 				Decimal d = new Decimal();
-				d.convertir(chaineCar);
+				d.converting(chaineCar);
 				break;
 			}
 			case "b": {
 				Binary b = new Binary();
-				b.convertir(chaineCar);
+				b.converting(chaineCar);
 				break;
 			}
 			case "t": {
