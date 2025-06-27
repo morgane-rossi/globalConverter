@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.ArrayList;
 
 class Binary extends Conversion {
     
@@ -43,7 +42,6 @@ class Binary extends Conversion {
                 else {
                     bin_string += 1;
                 }
-                
             }
             bin_string += " , ";
         }
