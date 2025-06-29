@@ -40,7 +40,7 @@ public class Main {
 			break;
 		}
 		default:
-			throw new IllegalArgumentException("Unexpected value: " + charStr.base);
+			return "";
 		}
     	return result;
 	}
@@ -83,7 +83,7 @@ public class Main {
 		}
 		
 		default:
-			throw new IllegalArgumentException("Unexpected value: " + base);        	
+			return new int[result.length()];        	
     	}
 		return fromConverted;
 	}
@@ -92,7 +92,16 @@ public class Main {
 	public static void main(String[] args) {
         try {
         	CharStr charStr = new CharStr();
-        	String base = ProcessArgs.processArgs(args, charStr);
+        	 ProcessArgs.processArgs(charStr);
+        	 String base = charStr.base;
+
+        	
+        	System.out.println("Texte original :");
+            for (char c : charStr.characters) {
+            	System.out.print(c);
+            }
+        	//        	System.out.println("PILOUUUUUUUUU" + charStr);
+        	System.out.println("\nbase : " + base);
 
         	Caesar.toDecimalArray(charStr);
         	
@@ -103,11 +112,12 @@ public class Main {
         	int[] decimals =  callReverse(result, base, charStr.key);
 
         	System.out.println("Texte original :");
-        	for (int k = 0 ; k < decimals.length ; k++) {
-        		System.out.print((char) decimals[k]);
+        	for (int l = 0 ; l < decimals.length ; l++) {
+        		System.out.print((char) decimals[l]);
         	} 
 
-        } catch (InvalidArgumentsException e) {
+        }
+        catch (InvalidArgumentsException e) {
             System.out.println("Error: " + e.getMessage());
         }
 

@@ -13,5 +13,10 @@ public class CharStr {
 	public CharStr() {
 		this.key = 0 ;
 	}
+	
+	@Override
+		public String toString() {
+			return this.characters.toString();
+		}
 
 }
