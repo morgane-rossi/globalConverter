@@ -18,5 +18,7 @@ public class Caesar {
 			decimalsArray[j] = decimal;
 		}
 		arrayChar.decimalsArray = decimalsArray;
+
 	}
+
 }

@@ -7,7 +7,9 @@ public abstract class Base {
 	public Base() {
 	}
 	
-	public abstract void converting(CharStr arrayChar);
+	public abstract String converting(CharStr arrayChar);
+	
+	public abstract int[] reverseConversion(String result, int key);
 
 
 }

@@ -7,7 +7,7 @@ public class ProcessArgs
 		super();
 	}
 	
-    public static void processArgs(String[] args, CharStr chaineCar) throws InvalidArgumentsException {
+    public static String processArgs(String[] args, CharStr chaineCar) throws InvalidArgumentsException {
 
     	/* Check that the String entry contains only letters, numbers and space character */
     	for (int i = 0 ; i < args[1].length() ; i++) {
@@ -68,7 +68,8 @@ public class ProcessArgs
             	chaineCar.base = "t";
             }
             default -> throw new InvalidArgumentsException("Unknown format: " + args[0]);
-        }        
+        }
+        return chaineCar.base ;
 
     }
 }

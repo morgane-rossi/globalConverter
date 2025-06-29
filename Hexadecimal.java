@@ -5,12 +5,14 @@ import java.util.Vector;
 public class Hexadecimal extends Base {
 
 	/*
-	 * displays hexadecimal values from a text input
+	 * returns a String that represents 
+	 * 	hexadecimal values from a text input
 	 * characters are separated by a space character
 	 * */
-	public void converting(CharStr arrayChar) {
+	@Override
+	public String converting(CharStr arrayChar) {
 
-		StringBuilder answer = new StringBuilder();
+		StringBuilder result = new StringBuilder();
 		int textLength = arrayChar.characters.length;
 
 		for(int k = 0 ; k < textLength ; k++) {
@@ -41,21 +43,75 @@ public class Hexadecimal extends Base {
 						c = 'F';
 						break;
 					default :
-						c = Character.forDigit(nombre, 10);
+						c = (char) (nombre  + '0');
 						break;
 				}
 				v.add(c + "");
 				nbHexa /= 16;
 				stillNumbers = (nbHexa > 0); 
 			}
-			// ajouter à answer mon vector de string
+
 			int s = v.size();
 			for (int l = s - 1 ; l >= 0 ; l--) {
-				answer.append(v.get(l));
+				result.append(v.get(l));
 			}
-			answer.append(" ");
+			result.append(" ");
 		}
-		System.out.println(answer.toString());
+		return result.toString();
 	}
 
+	
+	/*
+	 * returns a int array that represents int values 
+	 * from a hexadecimal String
+	 * */
+	@Override
+	public int[] reverseConversion(String result, int key) {
+		
+		String space = " ";
+		String[] convertedArrayStr = result.split(space);
+		
+		int sizeText = convertedArrayStr.length;
+    	
+    	int[] fromConverted = new int [sizeText];
+
+    	for (int j = 0 ; j < sizeText ; j++) {
+    		int decimalNumb = 0 ;
+    		char[] numbers =  convertedArrayStr[j].toCharArray() ;
+
+    		for (int k = 0 ; k < numbers.length ; k++) {
+    			
+    			decimalNumb *=  16;    			
+    			
+				switch(numbers[k]) {
+				case 'A' :
+					decimalNumb += 10;
+					break;
+				case 'B':
+					decimalNumb += 11;
+					break;
+				case 'C' :
+					decimalNumb += 12;
+					break;
+				case 'D' :
+					decimalNumb += 13;
+					break;
+				case 'E' :
+					decimalNumb += 14;
+					break;
+				case 'F' :
+					decimalNumb += 15;
+					break;
+				default :
+					decimalNumb += ( numbers[k] - '0');
+					break;
+				}
+    		}
+    		decimalNumb -= key ;
+    		fromConverted[j] = decimalNumb;
+    	}
+    	return fromConverted;
+	}	
+	
+	
 }
